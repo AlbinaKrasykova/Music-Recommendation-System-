@@ -3,7 +3,7 @@
 Plan & Resources 
 1. Load Data
 2. Clean Data 
-3. Add Recom Engine Fucntion Item based since we dont ahve precious hsitry it is the eaissts 
+3. Add Recom Engine Function Item based since we dont ahve precious hsitry it is the eaissts 
 4. StreamLit Musc interface + Vector Database 
 5. Add emotion based recom system
 - python3 -m pip install mlcroissant
