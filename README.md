@@ -9,13 +9,13 @@ Plan & Resources
 - python3 -m pip install mlcroissant
 
 
-Kaggle Spotfy Dataset: https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset
+- Kaggle Spotfy Dataset: https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset
 emotion text classifer huggin face model : https://huggingface.co/michellejieli/emotion_text_classifier
-face clasification: modle emotion detetcion : 
-Spotify : https://developer.spotify.com/documentation/web-api
+- face clasification: modle emotion detetcion : 
+- Spotify : https://developer.spotify.com/documentation/web-api
 log in to spotify
-Streamlit + Weaviate: https://weaviate-movie-magic.streamlit.app/?ref=blog.streamlit.io
-Run app command 
+- Streamlit + Weaviate: https://weaviate-movie-magic.streamlit.app/?ref=blog.streamlit.io
+- Run app command 
 
 + python3 -m streamlit run
 +pip install mlcroissant
