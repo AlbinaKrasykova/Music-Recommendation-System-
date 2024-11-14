@@ -20,3 +20,6 @@ log in to spotify
 + python3 -m streamlit run
 +pip install mlcroissant
 
+------------------------------------------------------------------------------------------------
+
+Guide to get strated: https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app
