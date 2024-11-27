@@ -20,6 +20,6 @@
 - Emotion Text Classifier (Hugging Face)
 - Face Classification: Emotion Detection Model
 - Spotify API Documentation
-- Streamlit + Weaviate Demo
+- Streamlit + Weaviate Demo - https://weaviate-movie-magic.streamlit.app/?ref=blog.streamlit.io
 
 
