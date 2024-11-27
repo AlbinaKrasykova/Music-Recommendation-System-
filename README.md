@@ -1,7 +1,7 @@
 # Spotify Music-Recommendation-System
 -
 ## Plan & Resources 
--
+
 ### Function:
 1. Load Data
 2. Clean Data 
