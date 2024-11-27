@@ -12,7 +12,7 @@
 ### Required Installations
 ```bash
 python3 -m pip install mlcroissant
-
+```
 Resources
 
 Kaggle Spotify Dataset
