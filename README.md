@@ -8,7 +8,8 @@
 3. Add Recommendation Engine Function (Item-based, chosen for simpler implementation without user history)
 4. StreamLit Music Interface + Vector Database 
 5. Add Emotion-based Recommendation System
--
+
+
 ### Required Installations & Setup Commands
 
 
