@@ -1,5 +1,5 @@
 # Spotify Music-Recommendation-System
-
+---
 ## Plan & Resources 
 
 ### Function:
@@ -10,15 +10,13 @@
 5. Add Emotion-based Recommendation System
 
 ### Required Installations
-```bash
-python3 -m pip install mlcroissant
-```
-Resources
 
-Kaggle Spotify Dataset
-Emotion Text Classifier (Hugging Face)
-Face Classification: Emotion Detection Model
-Spotify API Documentation
-Streamlit + Weaviate Demo
+#Resources
 
-Setup Commands
+- Kaggle Spotify Dataset
+- Emotion Text Classifier (Hugging Face)
+- Face Classification: Emotion Detection Model
+- Spotify API Documentation
+- Streamlit + Weaviate Demo
+
+#Setup Commands
