@@ -1,8 +1,8 @@
-# Spotify Music-Recommendation-System
+## Spotify Music-Recommendation-System
 
 ## Plan & Resources 
 
-### Function:
+## Function:
 1. Load Data
 2. Clean Data 
 3. Add Recommendation Engine Function (Item-based, chosen for simpler implementation without user history)
@@ -10,10 +10,10 @@
 5. Add Emotion-based Recommendation System
 
 
-### Required Installations & Setup Commands
+## Required Installations & Setup Commands
 
 
-# Resources
+## Resources
 
 
 - Kaggle Spotify Dataset
