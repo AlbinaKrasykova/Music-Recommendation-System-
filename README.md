@@ -1,5 +1,5 @@
 # Spotify Music-Recommendation-System
--
+
 ## Plan & Resources 
 
 ### Function:
@@ -11,7 +11,9 @@
 -
 ### Required Installations & Setup Commands
 
+
 #Resources
+
 
 - Kaggle Spotify Dataset
 - Emotion Text Classifier (Hugging Face)
