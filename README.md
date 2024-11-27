@@ -12,8 +12,8 @@
 ### Required Installations & Setup Commands
 
 
-#Resources
-
+# Resources
+--
 
 - Kaggle Spotify Dataset
 - Emotion Text Classifier (Hugging Face)
