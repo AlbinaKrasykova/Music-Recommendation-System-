@@ -1,49 +1,65 @@
-# Here I am adding a recom system engine with a Database Vector 
 import pandas as pd
 import plotly.graph_objects as go
-#from streamlit_lottie 
 import json
-
-#!/bin/bash
-
-import mlcroissant as mlc
-import pandas as pd
-
-# Fetch the Croissant JSON-LD
-croissant_dataset = mlc.Dataset('www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset/croissant/download')
-
-# Check what record sets are in the dataset
-record_sets = croissant_dataset.metadata.record_sets
-print(record_sets)
-
-# Fetch the records and put them in a DataFrame
-record_set_df = pd.DataFrame(croissant_dataset.records(record_set=record_sets[0].uuid))
-print(record_set_df.head())
-
-
-
- 
-'''
-1. Load Data
-2. Clean Data 
-3. Add Recom Engine Fucntion Item based since we dont ahve precious hsitry it is the eaissts 
-4. StreamLit Musc interface + Vector Database 
-5. Add emotion based recom system
-- python3 -m pip install mlcroissant
-
-
-Kaggle Spotfy Dataset: https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset
-emotion text classifer huggin face model : https://huggingface.co/michellejieli/emotion_text_classifier
-face clasification: modle emotion detetcion : 
-Spotify : https://developer.spotify.com/documentation/web-api
-log in to spotify
-Streamlit + Weaviate: https://weaviate-movie-magic.streamlit.app/?ref=blog.streamlit.io
-Run app command 
-
-+ python3 -m streamlit run
-+pip install mlcroissant
-
-'''
-#APP lib
 import streamlit as st
-st.header("Music Movie Recommendation System")
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+import ray
+from recom_sys import recommend_songs, similarity_matrix, df
+
+# Load your dataset
+df = pd.read_csv('dataset.csv')
+df = df.sample(n=10000, random_state=42).reset_index(drop=True)
+
+
+
+# Custom CSS to style the header and background
+page_bg_img = f"""
+<style>
+/* Apply green background to the entire page */
+body {{
+    background-color: green;
+}}
+
+
+.header-container {{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}}
+
+.header-container img {{
+    height: 40px;  /* Adjust the height of the logo */
+    margin-right: 15px;
+}}
+
+.header-container h1 {{
+    font-size: 2em;
+    font-weight: bold;
+}}
+</style>
+"""
+
+# Apply custom background to Streamlit app
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+# Display the header with the logo next to it
+st.markdown(
+    """
+    <div class="header-container">
+        <h1>Spotify Recommendation System</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo">
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+# Create dropdown for selecting a track
+movie_list = df['track_name'].values
+selected_song = st.selectbox("Type or select a movie from the dropdown", movie_list)
+
+# Button for showing recommendations
+if st.button('Show Recommendation'):
+    recommended_movie_names = recommend_songs(selected_song, similarity_matrix, df, top_n=5)
+    st.write("Recommended Tracks:")
+    st.write(recommended_movie_names)
