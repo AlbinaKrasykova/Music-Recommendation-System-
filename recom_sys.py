@@ -105,19 +105,23 @@ def recommend_songs(song_name, cosine_sim, df, top_n=5):
     # Step 4: Get the indices of the top N similar tracks
     similar_tracks = [x[0] for x in sorted_tracks[1:top_n+1]]  # Skip the first one (itself)
     
-    # Step 5: Retrieve the track names (and track_ids) for the similar tracks
-    recommended_tracks = df.iloc[similar_tracks][['track_name', 'track_id']]
+       # Step 5: Retrieve details for the similar tracks
+    track_names = df.iloc[similar_tracks]['track_name'].tolist()
+    artists = df.iloc[similar_tracks]['artists'].tolist()
+    track_ids = df.iloc[similar_tracks]['track_id'].tolist()
     
-    return recommended_tracks
+    return track_names, artists, track_ids
 
 # Example: Get recommendations for a specific song by its name
 selected_song_name = 'Yellow Submarine'  # Replace with a track name from your dataset
 
-recommended_tracks = recommend_songs(selected_song_name, similarity_matrix, df, top_n=5)
+recommended_tracks, artists, _ = recommend_songs(selected_song_name, similarity_matrix, df, top_n=5)
 
 # Display the recommended tracks
 print("Recommended Tracks:")
-print(recommended_tracks)
+
+def get_full_track_artist(recommended_tracks, artists):
+    return [f"{track} by {artist}" for track, artist in zip(recommended_tracks, artists)]
 
 # Step 6: Shutdown Ray after computation
 ray.shutdown()
