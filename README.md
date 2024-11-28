@@ -21,5 +21,6 @@
 - Face Classification: Emotion Detection Model
 - Spotify API Documentation
 - Streamlit + Weaviate Demo - https://weaviate-movie-magic.streamlit.app/?ref=blog.streamlit.io
+- Tensoflow recommender - https://medium.com/@pauloyc/tensorflow-recommenders-for-powerful-recommendation-system-e3dec138a07f
 
 
