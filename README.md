@@ -16,7 +16,7 @@
 ## Resources
 
 
-- Kaggle Spotify Dataset
+- Kaggle Spotify Dataset - https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge/dataset_files
 - Emotion Text Classifier (Hugging Face)
 - Face Classification: Emotion Detection Model
 - Spotify API Documentation
