@@ -59,8 +59,8 @@ def fetch_album_images(track_ids, client_id, client_secret):
                 print(f"Image {i} URL: {image['url']}")
 
 # Example usage
-client_id = "f42bac2a903240178a59ede81d2ce8d9"
-client_secret = "a8df94e6e1474b8fa217cc4c8612f506"
+client_id = "f42bac2a903240178a59ede81d2c***"
+client_secret = "a8df94e6e1474b8fa217cc4c8612****"
 track_ids = [
     "7qiZfU4dY1lWllzX7mPBI3",  # Example: "Shape of You" by Ed Sheeran
     "3n3Ppam7vgaVa1iaRUc9Lp",  # Example: "Blinding Lights" by The Weeknd
