@@ -2,10 +2,21 @@ import pandas as pd
 import streamlit as st
 import requests
 from recom_sys import recommend_songs, similarity_matrix, df, get_full_track_artist
-from fetch import client_id, client_secret
 import requests
 import base64
+from dotenv import load_dotenv
+import os
 
+# Load environment variables
+load_dotenv()
+
+# Get credentials from environment variables
+client_id = os.getenv('SPOTIFY_CLIENT_ID')
+client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
+
+if not client_id or not client_secret:
+    st.error("Missing Spotify credentials. Please check your .env file.")
+    st.stop()
 
 # Spotify API Helper Functions
 def fetch_album_images(track_id_list, client_id, client_secret):
@@ -109,7 +120,7 @@ selected_song_id = df.loc[df['track_name'] == selected_song, 'track_id'].values[
 if st.button('Show Recommendation'):
     recommended_tracks, artists, track_id_list = recommend_songs(selected_song, similarity_matrix, df, top_n=5)
     
-    # Fetch album images for the recommended tracks
+    # Use client_id and client_secret (not global_client_id)
     img_url_list = fetch_album_images(track_id_list, client_id, client_secret)
     
     # Display recommended tracks
